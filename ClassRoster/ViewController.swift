@@ -11,8 +11,11 @@ import UIKit
 class ViewController: UIViewController {
     
     var colorToggler = true
+    var days = ["Monday", "Tuesday", "Wendsday", "Thursday", "Friday"  ]
+    var currentIndex = 0
     @IBOutlet weak var backgroundBtn: UIButton!
     @IBOutlet weak var backgroundSwitch: UISwitch!
+    @IBOutlet weak var homeworkLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +63,21 @@ class ViewController: UIViewController {
             self.backgroundBtn.backgroundColor = UIColor.whiteColor()
         }
     }
-    
+    @IBAction func leftPressed(sender: AnyObject) {
+        if(currentIndex > 0){
+            currentIndex = currentIndex - 1
+            homeworkLabel.text = days[currentIndex]
+            println(days[currentIndex])
+            println(currentIndex)
+        }
+    }
+    @IBAction func rightPressed(sender: AnyObject) {
+        if(currentIndex < 4){            currentIndex = currentIndex + 1
+            homeworkLabel.text = days[currentIndex]
+            println(days[currentIndex])
+            println(currentIndex)
+        }
+
+    }
 }
 
