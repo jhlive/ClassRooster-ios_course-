@@ -14,6 +14,7 @@
 		A2C63A0B1A945144006713E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2C63A0A1A945144006713E0 /* Images.xcassets */; };
 		A2C63A0E1A945144006713E0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C63A0C1A945144006713E0 /* LaunchScreen.xib */; };
 		A2C63A1A1A945144006713E0 /* ClassRosterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C63A191A945144006713E0 /* ClassRosterTests.swift */; };
+		A2EA17911AA030D000657C8B /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EA17901AA030D000657C8B /* PersonDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		A2C63A131A945144006713E0 /* ClassRosterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassRosterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C63A181A945144006713E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2C63A191A945144006713E0 /* ClassRosterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRosterTests.swift; sourceTree = "<group>"; };
+		A2EA17901AA030D000657C8B /* PersonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		A2BC7CC51A96E61B00303CD1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A2EA17901AA030D000657C8B /* PersonDetailViewController.swift */,
 				A2C63A051A945144006713E0 /* ViewController.swift */,
 			);
 			name = Controller;
@@ -239,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2EA17911AA030D000657C8B /* PersonDetailViewController.swift in Sources */,
 				A2BC7CC31A96DBE600303CD1 /* Person.swift in Sources */,
 				A2C63A061A945144006713E0 /* ViewController.swift in Sources */,
 				A2C63A041A945144006713E0 /* AppDelegate.swift in Sources */,

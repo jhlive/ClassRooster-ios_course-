@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.title = "Home"
         for var i = 0; i < 20; ++i{
             var person = Person()
             people.append(person)
@@ -47,12 +48,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         return cell
     }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let myViewController = UIViewController()
-        myViewController.view.backgroundColor = UIColor.greenColor()
-        self.navigationController?.pushViewController(myViewController, animated: true)
-        println(indexPath.row)
     }
-}
 

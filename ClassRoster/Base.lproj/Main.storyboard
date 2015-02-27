@@ -26,6 +26,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fRt-B4-K8Z" id="DTE-Ou-uPZ">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Nfu-os-beh" kind="show" id="Zqb-3L-1Ul"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -43,6 +46,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944" y="513"/>
+        </scene>
+        <!--Person Detail View Controller-->
+        <scene sceneID="Nl0-Wa-m8k">
+            <objects>
+                <viewController id="Nfu-os-beh" customClass="PersonDetailViewController" customModule="ClassRoster" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Kx-9C-g0o"/>
+                        <viewControllerLayoutGuide type="bottom" id="xcE-n9-8Q0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pIj-0E-Q69">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.36637595671523621" green="0.59225063131313127" blue="0.33250753317622822" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LpH-84-fG4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614" y="513"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xk6-a3-KEP">
