@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var people = [Person]()
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         for var i = 0; i < 20; ++i{
             var person = Person()
             people.append(person)
@@ -47,5 +48,11 @@ class ViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let myViewController = UIViewController()
+        myViewController.view.backgroundColor = UIColor.greenColor()
+        self.navigationController?.pushViewController(myViewController, animated: true)
+        println(indexPath.row)
+    }
 }
 
