@@ -8,18 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
     
-    var colorToggler = true
-    @IBOutlet weak var backgroundBtn: UIButton!
-    @IBOutlet weak var backgroundSwitch: UISwitch!
+    let names = ["Kristy George","Bradford Brewer","Heather Martin","Marguerite Bishop","Ginger Leonard","Kelley Bates","Boyd Garza","Robin Carter","Evan Garrett","Eduardo Gregory","Natasha Wong","Travis Guzman","Cynthia Montgomery","Charles Ellis","Jodi Briggs","Alice Salazar","Kelli Hammond","Opal Daniels","Florence Gomez","Taylor Hunter","Wilfred Wise","Erma Hughes","Mario Sandoval","Darrin Paul","Vincent Woods"]
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let brad = Person(firstName: "Brad", lastName: "Johnson")
-        self.view.backgroundColor = UIColor.redColor()
-        println("View did load")
+        self.tableView.dataSource = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -30,35 +26,22 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         println("View did apear!!")
     }
-    @IBAction func changeBackgroundColor(sender: UIButton) {
-        if(self.colorToggler){
-            self.view.backgroundColor = UIColor.blueColor()
-        }
-        else{
-            self.view.backgroundColor = UIColor.redColor()
-        }
-        self.colorToggler = !self.colorToggler
-        
-        var people = [Person]()
-        let brad = Person(firstName: "Brand", lastName: "Johnson")
-        people.append(brad)
-        let russel = Person(firstName: "Russel", lastName: "Wilson")
-        people.append(russel)
-        let coolPeople = [brad,russel]
-        let dude = coolPeople[0]
-        dude.lastName
-        
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.names.count
     }
-
-    @IBAction func switchToggled(sender: UISwitch) {
-        if(sender.on){
-            self.view.backgroundColor = UIColor.yellowColor()
-            self.backgroundBtn.backgroundColor = UIColor.blackColor()
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        
+        cell.textLabel?.text = names[indexPath.row]
+        if indexPath.row == 0 {
+            cell.textLabel?.textColor = UIColor.whiteColor();
+            cell.backgroundColor = UIColor.blueColor();
         }
         else{
-            self.view.backgroundColor = UIColor.purpleColor()
-            self.backgroundBtn.backgroundColor = UIColor.whiteColor()
+            cell.textLabel?.textColor = UIColor.blackColor();
+            cell.backgroundColor = UIColor.whiteColor();
         }
+        return cell
     }
     
 }
