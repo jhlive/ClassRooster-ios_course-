@@ -23,4 +23,7 @@ class Person {
         self.firstName = names[randomNameIndex]
         self.lastName = lastnames[randomLastNameIndex]
     }
+    func fullName()-> String{
+        return self.firstName + " " + self.lastName
+    }
 }

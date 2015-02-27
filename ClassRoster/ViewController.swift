@@ -9,13 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
-    
-    let names = ["Kristy George","Bradford Brewer","Heather Martin","Marguerite Bishop","Ginger Leonard","Kelley Bates","Boyd Garza","Robin Carter","Evan Garrett","Eduardo Gregory","Natasha Wong","Travis Guzman","Cynthia Montgomery","Charles Ellis","Jodi Briggs","Alice Salazar","Kelli Hammond","Opal Daniels","Florence Gomez","Taylor Hunter","Wilfred Wise","Erma Hughes","Mario Sandoval","Darrin Paul","Vincent Woods"]
+    var people = [Person]()
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
+        for var i = 0; i < 20; ++i{
+            var person = Person()
+            people.append(person)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -27,12 +30,12 @@ class ViewController: UIViewController, UITableViewDataSource {
         println("View did apear!!")
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.names.count
+        return self.people.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
-        cell.textLabel?.text = names[indexPath.row]
+        cell.textLabel?.text = self.people[indexPath.row].fullName()
         if indexPath.row == 0 {
             cell.textLabel?.textColor = UIColor.whiteColor();
             cell.backgroundColor = UIColor.blueColor();
