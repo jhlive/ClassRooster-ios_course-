@@ -46,6 +46,21 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
         return cell
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowGreen" {
+            println("showing green")
+            let destinationVC = segue.destinationViewController as PersonDetailViewController
+            //asking the table view for the selected index path, because we need to know which row they clicked on
+            let indexPath = self.tableView.indexPathForSelectedRow()
+            //figures out which person they clicked on
+            let person = self.people[indexPath!.row]
+            //passing the person to our destination view controller
+            destinationVC.selectedPerson = person
+            
+            //destinationVC.selectedPerson =
+            //destinationVC.title = "Hello"
+        }
+    }
     
 }
 
