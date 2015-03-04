@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "People"
         self.tableView.dataSource = self
         for var i = 0; i < 20; ++i{
             var person = Person()

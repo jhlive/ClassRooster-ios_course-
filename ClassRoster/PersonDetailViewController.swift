@@ -17,6 +17,7 @@ class PersonDetailViewController: UIViewController {
         super.viewDidLoad()
         self.firstnameLabel.text = selectedPerson.firstName
         self.lastnameLabel.text = selectedPerson.lastName
+        self.title = selectedPerson.firstName + " Details"
         // Do any additional setup after loading the view.
     }
 
