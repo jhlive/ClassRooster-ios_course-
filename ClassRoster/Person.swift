@@ -11,8 +11,8 @@ let lastnames = ["Gray","James","Price","Berry","Figueroa","Curry","Holt","Robbi
 
 import Foundation
 class Person {
-    let firstName : String
-    let lastName : String
+    var firstName : String
+    var lastName : String
     init(firstName : String, lastName : String ){
         self.firstName = firstName
         self.lastName = lastName

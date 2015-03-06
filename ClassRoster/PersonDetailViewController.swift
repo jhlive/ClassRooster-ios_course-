@@ -19,6 +19,9 @@ class PersonDetailViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         self.firstNameTextField.delegate = self
         self.lastNameTextField.delegate = self
+        self.firstNameTextField.text = selectedPerson.firstName
+        self.lastNameTextField.text  = selectedPerson.lastName
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +31,12 @@ class PersonDetailViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    @IBAction func savePersonChangesBtn(sender: AnyObject) {
+        self.selectedPerson.firstName = self.firstNameTextField.text
+        self.selectedPerson.lastName = self.lastNameTextField.text
+        self.navigationController?.popViewControllerAnimated(true)
+        
     }
     
 
