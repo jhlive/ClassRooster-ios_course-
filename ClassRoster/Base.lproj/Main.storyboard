@@ -60,30 +60,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKA-Fq-oX8">
-                                <rect key="frame" x="41" y="131" width="108" height="21.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGw-er-J6x">
+                                <rect key="frame" x="542" y="559" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Person name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1g-Je-7gc">
-                                <rect key="frame" x="97" y="89" width="102" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ZD-2H-dBq">
-                                <rect key="frame" x="157" y="130" width="108" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fOG-NC-pNC">
+                                <rect key="frame" x="255.5" y="110" width="90.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J4j-lW-s7z">
+                                <rect key="frame" x="255" y="72" width="91.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="J4j-lW-s7z" secondAttribute="centerX" id="DtK-LQ-51V"/>
+                            <constraint firstItem="fOG-NC-pNC" firstAttribute="top" secondItem="J4j-lW-s7z" secondAttribute="bottom" constant="8" id="RtJ-wH-mGr"/>
+                            <constraint firstAttribute="centerX" secondItem="fOG-NC-pNC" secondAttribute="centerX" id="idb-xh-cHW"/>
+                            <constraint firstItem="J4j-lW-s7z" firstAttribute="top" secondItem="zEd-na-fHC" secondAttribute="bottom" constant="8" id="s5p-Qe-5ej"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="firstnameLabel" destination="cKA-Fq-oX8" id="c1V-Cw-UMB"/>
-                        <outlet property="lastnameLabel" destination="4ZD-2H-dBq" id="JQB-4B-1dx"/>
+                        <outlet property="firstNameTextField" destination="J4j-lW-s7z" id="xIt-5j-sBW"/>
+                        <outlet property="lastNameTextField" destination="fOG-NC-pNC" id="1Vd-cn-akE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sMQ-uy-4pZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

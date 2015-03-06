@@ -8,22 +8,26 @@
 
 import UIKit
 
-class PersonDetailViewController: UIViewController {
+class PersonDetailViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var firstnameLabel: UILabel!
-    @IBOutlet weak var lastnameLabel: UILabel!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
     var selectedPerson = Person()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.firstnameLabel.text = selectedPerson.firstName
-        self.lastnameLabel.text = selectedPerson.lastName
         self.title = selectedPerson.firstName + " Details"
         // Do any additional setup after loading the view.
+        self.firstNameTextField.delegate = self
+        self.lastNameTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 
