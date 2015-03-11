@@ -31,9 +31,15 @@ class ViewController: UIViewController, UITableViewDataSource {
         return self.people.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        
-        cell.textLabel?.text = self.people[indexPath.row].fullName()
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as PersonCell
+        var selectedPerson = self.people[indexPath.row]
+        cell.nameLabel.text = selectedPerson.fullName()
+        if selectedPerson.image != nil{
+            cell.profileImageView.image = selectedPerson.image
+        }
+        else{
+            cell.profileImageView.image = UIImage(named: "person-placeholder.jpg")
+        }
         if indexPath.row == 0 {
             cell.textLabel?.textColor = UIColor.whiteColor();
             cell.backgroundColor = UIColor.blueColor();

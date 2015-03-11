@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A24F37081AA3E23800F88BB4 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F37071AA3E23800F88BB4 /* PersonDetailViewController.swift */; };
 		A250BCA81AAFE43500048C17 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250BCA71AAFE43500048C17 /* PersonCell.swift */; };
-		A250BCAA1AAFE80E00048C17 /* person-placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A250BCA91AAFE80E00048C17 /* person-placeholder.jpg */; };
 		A2BC7CC31A96DBE600303CD1 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC7CC21A96DBE600303CD1 /* Person.swift */; };
 		A2C63A041A945144006713E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C63A031A945144006713E0 /* AppDelegate.swift */; };
 		A2C63A061A945144006713E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C63A051A945144006713E0 /* ViewController.swift */; };
@@ -17,6 +16,7 @@
 		A2C63A0B1A945144006713E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2C63A0A1A945144006713E0 /* Images.xcassets */; };
 		A2C63A0E1A945144006713E0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C63A0C1A945144006713E0 /* LaunchScreen.xib */; };
 		A2C63A1A1A945144006713E0 /* ClassRosterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C63A191A945144006713E0 /* ClassRosterTests.swift */; };
+		A2CAF0E11AAFF08D00C873A8 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2CAF0E01AAFF08D00C873A8 /* Property List.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +32,6 @@
 /* Begin PBXFileReference section */
 		A24F37071AA3E23800F88BB4 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		A250BCA71AAFE43500048C17 /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
-		A250BCA91AAFE80E00048C17 /* person-placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "person-placeholder.jpg"; sourceTree = "<group>"; };
 		A2BC7CC21A96DBE600303CD1 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		A2C639FE1A945144006713E0 /* ClassRoster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassRoster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C63A021A945144006713E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +43,7 @@
 		A2C63A131A945144006713E0 /* ClassRosterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassRosterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C63A181A945144006713E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2C63A191A945144006713E0 /* ClassRosterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRosterTests.swift; sourceTree = "<group>"; };
+		A2CAF0E01AAFF08D00C873A8 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 		A2C63A001A945144006713E0 /* ClassRoster */ = {
 			isa = PBXGroup;
 			children = (
-				A250BCA91AAFE80E00048C17 /* person-placeholder.jpg */,
+				A2CAF0E01AAFF08D00C873A8 /* Property List.plist */,
 				A2BC7CC41A96E60C00303CD1 /* Model */,
 				A2BC7CC61A96E62C00303CD1 /* View */,
 				A2BC7CC51A96E61B00303CD1 /* Controller */,
@@ -228,9 +228,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A250BCAA1AAFE80E00048C17 /* person-placeholder.jpg in Resources */,
 				A2C63A091A945144006713E0 /* Main.storyboard in Resources */,
 				A2C63A0E1A945144006713E0 /* LaunchScreen.xib in Resources */,
+				A2CAF0E11AAFF08D00C873A8 /* Property List.plist in Resources */,
 				A2C63A0B1A945144006713E0 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
