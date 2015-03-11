@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RK0-dC-a8T">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,17 +17,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8Ox-jc-Fr9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="129" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8Ox-jc-Fr9">
                                 <rect key="frame" x="0.0" y="-20" width="600" height="620"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="fRt-B4-K8Z">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="129" id="fRt-B4-K8Z" customClass="PersonCell" customModule="ClassRoster" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fRt-B4-K8Z" id="DTE-Ou-uPZ">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o3l-gt-qW2">
+                                                    <rect key="frame" x="8" y="35" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="4R1-1D-157"/>
+                                                        <constraint firstAttribute="height" constant="60" id="Q4M-Po-8Bj"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fed-7b-z9v">
+                                                    <rect key="frame" x="93" y="35" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lv5-le-O6c">
+                                                    <rect key="frame" x="93" y="35" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="o3l-gt-qW2" firstAttribute="leading" secondItem="DTE-Ou-uPZ" secondAttribute="leadingMargin" id="Iql-Yq-pG9"/>
+                                                <constraint firstAttribute="centerY" secondItem="o3l-gt-qW2" secondAttribute="centerY" id="PbF-7o-Wn7"/>
+                                                <constraint firstItem="fed-7b-z9v" firstAttribute="leading" secondItem="o3l-gt-qW2" secondAttribute="trailing" constant="25" id="fN9-K2-WgG"/>
+                                                <constraint firstItem="o3l-gt-qW2" firstAttribute="top" secondItem="fed-7b-z9v" secondAttribute="top" id="xdF-Sk-CPt"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="nameLabel" destination="Lv5-le-O6c" id="met-W7-e2S"/>
+                                            <outlet property="profileImageView" destination="o3l-gt-qW2" id="9TL-LX-LAS"/>
                                             <segue destination="qCw-le-p3c" kind="show" identifier="ShowGreen" id="soh-Ya-JMI"/>
                                         </connections>
                                     </tableViewCell>
@@ -36,7 +66,10 @@
                         <color key="backgroundColor" red="0.98294522090000003" green="0.98648679719999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="8Ox-jc-Fr9" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="RYo-5w-XIM"/>
+                            <constraint firstItem="8Ox-jc-Fr9" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="-20" id="RYo-5w-XIM"/>
+                            <constraint firstItem="8Ox-jc-Fr9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="TLD-Jg-aaV"/>
+                            <constraint firstItem="8Ox-jc-Fr9" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="jqS-Dt-2zf"/>
+                            <constraint firstAttribute="trailing" secondItem="8Ox-jc-Fr9" secondAttribute="trailing" id="yw1-cr-3ZA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="geo-rz-ghf"/>
