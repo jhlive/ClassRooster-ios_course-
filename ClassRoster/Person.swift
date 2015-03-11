@@ -27,4 +27,12 @@ class Person {
     func fullName()-> String{
         return self.firstName + " " + self.lastName
     }
+    class func randomPeopleGenerator(numberOfRandomPeople: Int) -> Array<Person>{
+        var people = [Person]()
+        for var i = 0; i < numberOfRandomPeople; ++i{
+            var person = Person()
+            people.append(person)
+        }
+        return people
+    }
 }

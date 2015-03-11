@@ -76,8 +76,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="yo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Gh2-sd-HzI">
+                                <rect key="frame" x="180" y="148" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Q6y-Mx-4jW"/>
+                                    <constraint firstAttribute="width" constant="240" id="fwg-Oa-3Ny"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmp-zj-xtv">
-                                <rect key="frame" x="320" y="299" width="100" height="30"/>
+                                <rect key="frame" x="320" y="294" width="100" height="30"/>
                                 <state key="normal" title="Save Changes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -85,11 +92,8 @@
                                     <action selector="savePersonChangesBtn:" destination="qCw-le-p3c" eventType="touchUpInside" id="sIs-tY-G6m"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="yo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Gh2-sd-HzI">
-                                <rect key="frame" x="180" y="148" width="240" height="128"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asa-zN-cvd">
-                                <rect key="frame" x="180" y="299" width="97" height="30"/>
+                                <rect key="frame" x="180" y="294" width="97" height="30"/>
                                 <state key="normal" title="Take a Picture">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -105,9 +109,10 @@
                             <constraint firstAttribute="centerX" secondItem="J4j-lW-s7z" secondAttribute="centerX" id="DtK-LQ-51V"/>
                             <constraint firstItem="mmp-zj-xtv" firstAttribute="top" secondItem="Gh2-sd-HzI" secondAttribute="bottom" constant="20" id="Ouy-1q-Mk1"/>
                             <constraint firstItem="fOG-NC-pNC" firstAttribute="top" secondItem="J4j-lW-s7z" secondAttribute="bottom" constant="8" id="RtJ-wH-mGr"/>
+                            <constraint firstAttribute="centerY" secondItem="mmp-zj-xtv" secondAttribute="centerY" id="Zsr-ES-hRa"/>
                             <constraint firstAttribute="centerX" secondItem="Gh2-sd-HzI" secondAttribute="centerX" id="fbT-N3-oHV"/>
-                            <constraint firstItem="Asa-zN-cvd" firstAttribute="baseline" secondItem="mmp-zj-xtv" secondAttribute="baseline" id="iZs-Kz-UDO"/>
                             <constraint firstAttribute="centerX" secondItem="fOG-NC-pNC" secondAttribute="centerX" id="idb-xh-cHW"/>
+                            <constraint firstAttribute="centerY" secondItem="Asa-zN-cvd" secondAttribute="centerY" id="qq0-20-MME"/>
                             <constraint firstItem="J4j-lW-s7z" firstAttribute="top" secondItem="zEd-na-fHC" secondAttribute="bottom" constant="8" id="s5p-Qe-5ej"/>
                         </constraints>
                     </view>

@@ -16,10 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         self.title = "People"
         self.tableView.dataSource = self
-        for var i = 0; i < 20; ++i{
-            var person = Person()
-            people.append(person)
-        }
+        people = Person.randomPeopleGenerator(20)
     }
     
     override func viewWillAppear(animated: Bool) {
