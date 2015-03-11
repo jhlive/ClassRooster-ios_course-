@@ -76,7 +76,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="yo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Gh2-sd-HzI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="person-placeholder.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Gh2-sd-HzI">
                                 <rect key="frame" x="180" y="148" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="Q6y-Mx-4jW"/>
@@ -118,6 +118,7 @@
                     </view>
                     <connections>
                         <outlet property="firstNameTextField" destination="J4j-lW-s7z" id="xIt-5j-sBW"/>
+                        <outlet property="imageView" destination="Gh2-sd-HzI" id="HkA-YG-tmJ"/>
                         <outlet property="lastNameTextField" destination="fOG-NC-pNC" id="1Vd-cn-akE"/>
                     </connections>
                 </viewController>
@@ -145,6 +146,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="yo.jpg" width="560" height="400"/>
+        <image name="person-placeholder.jpg" width="500" height="500"/>
     </resources>
 </document>

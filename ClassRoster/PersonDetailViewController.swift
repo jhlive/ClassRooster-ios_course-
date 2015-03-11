@@ -10,6 +10,7 @@ import UIKit
 
 class PersonDetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     var selectedPerson = Person()
@@ -21,6 +22,9 @@ class PersonDetailViewController: UIViewController, UITextFieldDelegate, UIImage
         self.lastNameTextField.delegate = self
         self.firstNameTextField.text = selectedPerson.firstName
         self.lastNameTextField.text  = selectedPerson.lastName
+        if self.selectedPerson.image != nil{
+            self.imageView.image = self.selectedPerson.image
+        }
         
     }
 
