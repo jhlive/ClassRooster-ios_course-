@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonDetailViewController: UIViewController, UITextFieldDelegate {
+class PersonDetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -39,6 +39,12 @@ class PersonDetailViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func takePictureBtnPressed(sender: AnyObject) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        self.presentViewController(imagePickerController, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

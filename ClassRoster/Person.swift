@@ -9,10 +9,11 @@
 let names = ["Dan","Roderick","Lee","Geraldine","Elsa","Annette","Preston","Bridget","Robin","Barry","Rene","Rose","Brian","Jon","Brandon","Stewart","Freda","Gary","Janet","Sheryl","Saul","Grady","Elvira","Bob","Carla"]
 let lastnames = ["Gray","James","Price","Berry","Figueroa","Curry","Holt","Robbins","Poole","Adams","Lucas","Craig","Gibbs","Brooks","West","Bowman","Hodges","Brock","Gross","Sutton","Owen","Terry","Simon","Phillips","Myers"]
 
-import Foundation
+import UIKit
 class Person {
     var firstName : String
     var lastName : String
+    var image : UIImage? // Optional propertie
     init(firstName : String, lastName : String ){
         self.firstName = firstName
         self.lastName = lastName

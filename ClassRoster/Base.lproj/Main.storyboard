@@ -56,7 +56,7 @@
                         <viewControllerLayoutGuide type="top" id="zEd-na-fHC"/>
                         <viewControllerLayoutGuide type="bottom" id="Qkv-hA-xOv"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6Mw-Nd-1mf">
+                    <view key="view" contentMode="scaleAspectFill" id="6Mw-Nd-1mf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -76,8 +76,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmp-zj-xtv">
-                                <rect key="frame" x="250" y="164" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmp-zj-xtv">
+                                <rect key="frame" x="320" y="299" width="100" height="30"/>
                                 <state key="normal" title="Save Changes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -85,13 +85,28 @@
                                     <action selector="savePersonChangesBtn:" destination="qCw-le-p3c" eventType="touchUpInside" id="sIs-tY-G6m"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="yo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Gh2-sd-HzI">
+                                <rect key="frame" x="180" y="148" width="240" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asa-zN-cvd">
+                                <rect key="frame" x="180" y="299" width="97" height="30"/>
+                                <state key="normal" title="Take a Picture">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePictureBtnPressed:" destination="qCw-le-p3c" eventType="touchUpInside" id="kqG-yP-n6V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Asa-zN-cvd" firstAttribute="top" secondItem="Gh2-sd-HzI" secondAttribute="bottom" constant="20" id="4pB-tw-eNT"/>
+                            <constraint firstItem="Gh2-sd-HzI" firstAttribute="top" secondItem="fOG-NC-pNC" secondAttribute="bottom" constant="20" id="AcS-Dg-HDG"/>
                             <constraint firstAttribute="centerX" secondItem="J4j-lW-s7z" secondAttribute="centerX" id="DtK-LQ-51V"/>
+                            <constraint firstItem="mmp-zj-xtv" firstAttribute="top" secondItem="Gh2-sd-HzI" secondAttribute="bottom" constant="20" id="Ouy-1q-Mk1"/>
                             <constraint firstItem="fOG-NC-pNC" firstAttribute="top" secondItem="J4j-lW-s7z" secondAttribute="bottom" constant="8" id="RtJ-wH-mGr"/>
-                            <constraint firstItem="mmp-zj-xtv" firstAttribute="top" secondItem="fOG-NC-pNC" secondAttribute="bottom" constant="20" id="X6t-nJ-uFl"/>
-                            <constraint firstAttribute="centerX" secondItem="mmp-zj-xtv" secondAttribute="centerX" id="aWU-Hm-EbS"/>
+                            <constraint firstAttribute="centerX" secondItem="Gh2-sd-HzI" secondAttribute="centerX" id="fbT-N3-oHV"/>
+                            <constraint firstItem="Asa-zN-cvd" firstAttribute="baseline" secondItem="mmp-zj-xtv" secondAttribute="baseline" id="iZs-Kz-UDO"/>
                             <constraint firstAttribute="centerX" secondItem="fOG-NC-pNC" secondAttribute="centerX" id="idb-xh-cHW"/>
                             <constraint firstItem="J4j-lW-s7z" firstAttribute="top" secondItem="zEd-na-fHC" secondAttribute="bottom" constant="8" id="s5p-Qe-5ej"/>
                         </constraints>
@@ -124,4 +139,7 @@
             <point key="canvasLocation" x="132" y="513"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="yo.jpg" width="560" height="400"/>
+    </resources>
 </document>
