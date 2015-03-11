@@ -16,19 +16,16 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         self.title = "People"
         self.tableView.dataSource = self
-        for var i = 0; i < 20; ++i{
-            var person = Person()
-            people.append(person)
-        }
+        people = Person.randomPeopleGenerator(20)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        println("view will apear")
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        println("View did apear!!")
+        self.tableView.reloadData()
+        
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.people.count
@@ -62,6 +59,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             //destinationVC.title = "Hello"
         }
     }
+    
     
 }
 

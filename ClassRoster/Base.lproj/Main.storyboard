@@ -27,7 +27,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fRt-B4-K8Z" id="DTE-Ou-uPZ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o3l-gt-qW2">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person-placeholder.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="o3l-gt-qW2">
                                                     <rect key="frame" x="8" y="35" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="4R1-1D-157"/>
@@ -89,34 +89,70 @@
                         <viewControllerLayoutGuide type="top" id="zEd-na-fHC"/>
                         <viewControllerLayoutGuide type="bottom" id="Qkv-hA-xOv"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6Mw-Nd-1mf">
+                    <view key="view" contentMode="scaleAspectFill" id="6Mw-Nd-1mf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKA-Fq-oX8">
-                                <rect key="frame" x="41" y="131" width="108" height="21.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGw-er-J6x">
+                                <rect key="frame" x="542" y="559" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Person name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1g-Je-7gc">
-                                <rect key="frame" x="97" y="89" width="102" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ZD-2H-dBq">
-                                <rect key="frame" x="157" y="130" width="108" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J4j-lW-s7z">
+                                <rect key="frame" x="255" y="72" width="91.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fOG-NC-pNC">
+                                <rect key="frame" x="255" y="110" width="90.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person-placeholder.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Gh2-sd-HzI">
+                                <rect key="frame" x="180" y="148" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Q6y-Mx-4jW"/>
+                                    <constraint firstAttribute="width" constant="240" id="fwg-Oa-3Ny"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmp-zj-xtv">
+                                <rect key="frame" x="330" y="294" width="100" height="30"/>
+                                <state key="normal" title="Save Changes">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="savePersonChangesBtn:" destination="qCw-le-p3c" eventType="touchUpInside" id="sIs-tY-G6m"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asa-zN-cvd">
+                                <rect key="frame" x="171.5" y="294" width="97" height="30"/>
+                                <state key="normal" title="Take a Picture">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePictureBtnPressed:" destination="qCw-le-p3c" eventType="touchUpInside" id="kqG-yP-n6V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Asa-zN-cvd" firstAttribute="top" secondItem="Gh2-sd-HzI" secondAttribute="bottom" constant="18" id="4pB-tw-eNT"/>
+                            <constraint firstItem="Gh2-sd-HzI" firstAttribute="top" secondItem="fOG-NC-pNC" secondAttribute="bottom" constant="8" id="AcS-Dg-HDG"/>
+                            <constraint firstAttribute="centerX" secondItem="J4j-lW-s7z" secondAttribute="centerX" id="DtK-LQ-51V"/>
+                            <constraint firstAttribute="centerX" secondItem="Asa-zN-cvd" secondAttribute="centerX" constant="80" id="E1S-r5-4JU"/>
+                            <constraint firstItem="mmp-zj-xtv" firstAttribute="top" secondItem="Gh2-sd-HzI" secondAttribute="bottom" constant="18" id="Ouy-1q-Mk1"/>
+                            <constraint firstItem="fOG-NC-pNC" firstAttribute="top" secondItem="J4j-lW-s7z" secondAttribute="bottom" constant="8" id="RtJ-wH-mGr"/>
+                            <constraint firstAttribute="centerX" secondItem="Gh2-sd-HzI" secondAttribute="centerX" id="fbT-N3-oHV"/>
+                            <constraint firstAttribute="centerX" secondItem="fOG-NC-pNC" secondAttribute="centerX" id="idb-xh-cHW"/>
+                            <constraint firstAttribute="centerX" secondItem="mmp-zj-xtv" secondAttribute="centerX" constant="-80" id="nQs-VM-NkV"/>
+                            <constraint firstItem="J4j-lW-s7z" firstAttribute="top" secondItem="zEd-na-fHC" secondAttribute="bottom" constant="8" id="s5p-Qe-5ej"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="firstnameLabel" destination="cKA-Fq-oX8" id="c1V-Cw-UMB"/>
-                        <outlet property="lastnameLabel" destination="4ZD-2H-dBq" id="JQB-4B-1dx"/>
+                        <outlet property="firstNameTextField" destination="J4j-lW-s7z" id="xIt-5j-sBW"/>
+                        <outlet property="imageView" destination="Gh2-sd-HzI" id="HkA-YG-tmJ"/>
+                        <outlet property="lastNameTextField" destination="fOG-NC-pNC" id="1Vd-cn-akE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sMQ-uy-4pZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -142,4 +178,7 @@
             <point key="canvasLocation" x="132" y="513"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="person-placeholder.jpg" width="500" height="500"/>
+    </resources>
 </document>
