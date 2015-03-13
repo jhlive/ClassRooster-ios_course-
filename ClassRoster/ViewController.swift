@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         self.title = "People"
         self.tableView.dataSource = self
+        //if let filePath = NSBundle.mainBundle()
         people = Person.randomPeopleGenerator(20)
     }
     
