@@ -16,22 +16,39 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         self.title = "People"
         self.tableView.dataSource = self
-        if let filePath = NSBundle.mainBundle().pathForResource("People", ofType: "plist"){
-            println(filePath)
-            if let plistArray = NSArray(contentsOfFile: filePath){
-                println(plistArray.count)
-                for personObject in plistArray{
-                    if let personDictionary = personObject as? NSDictionary{
-                        let firstName = personDictionary["firstName"] as! String
-                        let lastName = personDictionary["lastName"] as! String
-                        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if let count = userDefaults.objectForKey("launchCount") as? Int {
+            let newCount = count + 1
+            userDefaults.setObject(newCount, forKey: "launchCount")
+            
+        } else {
+            println("first launch!")
+            let count = 1
+            userDefaults.setObject(count, forKey: "launchCount")
+        }
+        userDefaults.synchronize()
+        self.loadFromArchive()
+        if self.people.isEmpty{
+            if let filePath = NSBundle.mainBundle().pathForResource("People", ofType: "plist"){
+                println(filePath)
+                if let plistArray = NSArray(contentsOfFile: filePath){
+                    println(plistArray.count)
+                    for personObject in plistArray{
+                        if let personDictionary = personObject as? NSDictionary{
+                            let firstName = personDictionary["firstName"] as String
+                            let lastName = personDictionary["lastName"] as String
+                            var person = Person(firstName: firstName,lastName: lastName)
+                            people.append(person)
+                        }
                     }
                 }
+                
+            }else{
+                people = Person.randomPeopleGenerator(20)
             }
-            
-        }else{
-            people = Person.randomPeopleGenerator(20)
         }
+        self.saveToArchive()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -81,6 +98,24 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    func loadFromArchive() {
+        let path = getDocumentsPath()
+        if let arrayFromArchive = NSKeyedUnarchiver.unarchiveObjectWithFile(path + "/PeopleData") as? [Person]{
+            self.people = arrayFromArchive
+        }
+    }
+    
+    func saveToArchive() {
+        let path = self.getDocumentsPath()
+        println(path)
+        NSKeyedArchiver.archiveRootObject(self.people, toFile: path + "/PeopleData")
+    }
+    
+    func getDocumentsPath() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        let path = paths.first as String
+        return path
+    }
     
 }
 

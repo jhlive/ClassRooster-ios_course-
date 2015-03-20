@@ -46,18 +46,24 @@ class PersonDetailViewController: UIViewController, UITextFieldDelegate, UIImage
     @IBAction func takePictureBtnPressed(sender: AnyObject) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
-        imagePickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
+        } else {
+            imagePickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        }
         self.presentViewController(imagePickerController, animated: true, completion: nil)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        let image = info[UIImagePickerControllerOriginalImage] as UIImage
+        self.imageView.image = image
+        self.selectedPerson.image = image
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
-    */
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }
