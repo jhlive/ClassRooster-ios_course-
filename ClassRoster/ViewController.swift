@@ -16,8 +16,22 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         self.title = "People"
         self.tableView.dataSource = self
-        //if let filePath = NSBundle.mainBundle()
-        people = Person.randomPeopleGenerator(20)
+        if let filePath = NSBundle.mainBundle().pathForResource("People", ofType: "plist"){
+            println(filePath)
+            if let plistArray = NSArray(contentsOfFile: filePath){
+                println(plistArray.count)
+                for personObject in plistArray{
+                    if let personDictionary = personObject as? NSDictionary{
+                        let firstName = personDictionary["firstName"] as! String
+                        let lastName = personDictionary["lastName"] as! String
+                        
+                    }
+                }
+            }
+            
+        }else{
+            people = Person.randomPeopleGenerator(20)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
